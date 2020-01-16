@@ -1,0 +1,29 @@
+.rightpanel
+
+{
+    float:right;
+    font-weight:bold;
+}
+  .rightpanel .log{
+     text-decoration:underline ;
+     cursor:pointer;
+  }
+  .wrapper {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 2% 8%;
+    padding: 3%;
+  }
+.middlepanel
+{
+    margin-bottom:5%;
+}
+
+  .middlepanel input {
+    overflow: visible;
+    padding: 11px;
+    margin: 8px;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+    outline:none;
+  }
+

@@ -1,0 +1,72 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<p-toast position="top-center"></p-toast>
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://nvest.com/assets/img/Nvest%20Labs%20-%20PNG.png" alt="" />
+      <h3>Welcome</h3>
+      <p>Please Login to the Application</p>
+      <input type="submit" name="" (click)="ToggleButton()" value="Login" /><br />
+    </div>
+    <div class="col-md-9 register-right">
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" *ngIf="!IsSignUp" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Sign Up</h3>
+          <div class="row register-form">
+            <div class="row col-md-3"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" [(ngModel)]="FullName" class="form-control" placeholder="Full Name *" autocomplete="off" value="" />
+              </div>
+              <div class="form-group">
+                <input type="email" [(ngModel)]="Email"  class="form-control" placeholder="Email  *" autocomplete="off" value="" />
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]="Password" class="form-control" placeholder="Password *" autocomplete="off" value="" />
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]="Cpassword" class="form-control" placeholder="Confirm Password *" autocomplete="off" value="" />
+              </div>
+              <div class="form-group">
+                <input type="date" [(ngModel)]="DOB" class="form-control" placeholder="DOB *" autocomplete="off" value="" />
+              </div>
+              <p class="errormsg">{{ErrorMessage}} </p>
+              <input type="submit" (click)="SignUp()" class="submitbtn" name="" value="Submit" /><br />
+
+              <p>Already Registered Log In <a (click)="ToggleButton()">here!</a></p>
+            </div>
+            <div class="row col-md-3"></div>
+           
+
+          </div>
+        </div>
+        <div class="tab-pane fade show active" id="profile" *ngIf="IsSignUp" role="tabpanel" aria-labelledby="profile-tab">
+          <h3 class="register-heading">Login</h3>
+          <div class="row register-form">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" [(ngModel)]="LoginEmail" class="form-control" placeholder="Email *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="password" [(ngModel)]="LoginPassword" class="form-control" placeholder="Password *" value="" />
+              </div>
+              <input type="submit" class="submitbtn" name="" (click)="Login()" value="Login" /><br />
+              <p>New User? Sign Up <a (click)="ToggleButton()">here!</a></p>
+
+            </div>
+            <div class="col-md-3"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

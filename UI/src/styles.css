@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body .ui-table .ui-table-thead > tr > th {
+  padding: 0.571em 0.857em;
+  border: 1px solid #c8c8c8;
+  font-weight: 700;
+  color: #333333;
+  background-color: #c0d3e7;
+}

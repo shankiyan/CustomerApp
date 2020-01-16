@@ -1,0 +1,49 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="wrapper">
+  <div class="rightpanel">
+    <img src="https://i.ya-webdesign.com/images/profile-icon-png-7.png" height="35" width="35" />
+    <br />
+    <span>{{UserEmail}}</span>
+    <br />
+    <span class="log" (click)="SignOut()">Log Out</span>
+  </div>
+  <h2>My Contacts</h2> <i class="pi pi-calendar"></i>
+
+
+
+  <div class="middlepanel">
+
+    <input type="text" [(ngModel)]="EnteredEmail" placeholder="Type Email ID to add" />
+    <button class="btn btn-outline-primary" (click)="AddToContacts()"> ADD</button>
+  </div>
+
+
+  <p-table [value]="CustomersList">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+      <tr>
+        <td>{{car.FullName}}</td>
+        <td>{{car.Email}}</td>
+        <td>{{car.DOB |date}}</td>
+        <td> <button class="btn btn-outline-warning" *ngIf="car.IsBirthDay" (click)="SendWishes(car.Email)">Send Wishes</button> </td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+
+  
+
+
+</div>
